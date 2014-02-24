@@ -1,0 +1,63 @@
+body {
+  background: #FFFFFF;
+}
+
+/* - Header - */
+
+.ec-account-masthead{
+    margin-left: auto;
+    margin-right: auto;
+	width:940px;
+	background: url("../images/languagebar.png") no-repeat scroll right top #FFFFFF;
+}
+
+.ec-masthead{
+	margin-left: auto;
+    margin-right: auto;
+	width:940px;	
+}
+
+.account-masthead .account ul li {
+	border-left: 0px solid #00232E;
+}
+
+.ec-language{
+	width: 120px;
+}
+
+/* - Layout 1 - */
+
+.hero-ec{
+	background: #BBBBBB;
+}
+
+.ec-col1{
+	width: 650px;
+}
+
+.ec-col2{
+	width: 250px;
+}
+
+.ec-layout1-container {
+  height: 550px;
+  margin-top: 20px;
+  background: #FFFFFF;
+}
+
+.ec-promoted{
+	width: 200px;
+	margin-left: 0px;
+}
+
+.ec-search-form{
+	border-bottom: 0px #FFFFFF;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+
+/* - Footer - */
+.ec-site-footer{
+	background: #FFFFFF;
+}
+

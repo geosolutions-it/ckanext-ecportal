@@ -1,0 +1,16 @@
+{% set intro = g.site_intro_text %}
+
+<div class="ec-promoted">
+  <header>
+    {% if intro %}
+      {{ h.render_markdown(intro) }}
+    {% else %}
+      <!--h1 class="page-heading">{{ _("Welcome to CKAN") }}</h1-->
+      <p>
+      </p>
+    {% endif %}
+  </header>
+  <section class="featured media-overlay">
+  <h2 class="media-heading">{{ _("This is a featured section") }}</h2>
+  </section>
+</div>
