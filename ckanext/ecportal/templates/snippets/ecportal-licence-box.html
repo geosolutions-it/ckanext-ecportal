@@ -1,0 +1,19 @@
+{#
+   pkg        - A package to display.
+#}
+
+{% set licj = h.get_pkg_dict_extra(pkg, 'licence') %}
+
+{% if licj %}
+   {% set lic_list = h.from_json_ec(licj) %}
+
+   <div class="dataset-box">
+      <h3>{{_('Licence')}}</h3>
+      {% for licence in lic_list %}
+         <div>{{licence}}</div>
+      {% endfor %}
+   </div>
+
+{% endif %}
+
+

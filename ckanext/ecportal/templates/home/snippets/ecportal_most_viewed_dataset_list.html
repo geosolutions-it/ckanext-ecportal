@@ -1,0 +1,13 @@
+{% set datasets = h.most_viewed_datasets(10) %}
+
+<div class="box">
+   <h2>Most viewed dataset ({{datasets|count}})</h2>
+   <div class="inner">
+      <ul class="dataset-list unstyled">
+         {% for dataset in datasets %}
+            {% snippet 'home/snippets/ecportal_dataset_viewed.html', package=dataset, truncate_title=80 %}
+         {% endfor %}
+      </ul>
+   </div>
+</div>
+

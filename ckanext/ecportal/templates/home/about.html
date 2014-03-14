@@ -1,0 +1,16 @@
+{% ckan_extends %}
+
+{% block wrapper_class %}_about{% endblock %}
+
+{% block primary %}
+   <div role="main" class="hero hero-ec">
+     <div class="container ec-layout1-container region-tabdesc">
+       <div class="row row1">
+          <div class="col1">
+             {% snippet 'home/snippets/about_text.html' %}
+         </div>
+       </div>
+     </div>
+   </div>
+{% endblock %}
+

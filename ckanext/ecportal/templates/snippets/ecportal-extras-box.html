@@ -1,0 +1,25 @@
+{#
+   pkg        - A package to display.
+#}
+
+
+{% set extras = h.sorted_extras(pkg.extras) %} 
+
+{% if extras %}
+   <div class="dataset-box">
+      <h3>{{_('Extras')}}</h3>
+
+      {% for name,value in extras %}
+         <div>{{name}}: {{value}} </div>
+      {% endfor%}
+   <div>
+{% endif %}
+
+{% if pkg.extras and not extras %}
+<div class="dataset-box">
+      <h3>{{_('Extras')}} (not converted)</h3>
+      <div>{{pkg.extras}}</div>
+</div>
+{% endif %}
+
+

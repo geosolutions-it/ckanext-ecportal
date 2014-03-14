@@ -1,0 +1,15 @@
+{% set orgs = h.top_publishers() %}
+
+<div class="box">
+   <h2>Top publishers ({{orgs|count}})</h2>
+   <div class="inner">
+      <ul class="dataset-list unstyled">
+         {% for org in orgs %}
+            {% if org.packages %}
+               {% snippet "home/snippets/ecportal_organization_item.html", organization=org %}
+            {% endif %}
+         {% endfor %}
+      </ul>
+   </div>
+</ul>
+

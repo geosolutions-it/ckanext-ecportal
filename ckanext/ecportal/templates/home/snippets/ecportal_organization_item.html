@@ -1,0 +1,24 @@
+{#
+Displays a organization item.
+
+organization - A organization dict.
+#}
+
+{% set url = h.url_for(organization.type ~ '_read', action='read', id=organization.name) %}
+
+
+<li Xclass="{{ item_class or "dataset-item" }}">
+   <a class="item_link" href="{{url}}">
+      <i class="publisher"></i>
+      <strong>{{organization.display_name}}</strong>
+      <br>
+      <span class="additional">(
+         {% if organization.packages %}
+            {{ ungettext('{num} Dataset', '{num} Datasets', organization.packages).format(num=organization.packages) }}
+         {% else %}
+            {{ _('0 Datasets') }}
+         {% endif %})
+      </span>
+   </a>
+</li>
+

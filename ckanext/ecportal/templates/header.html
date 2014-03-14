@@ -1,118 +1,124 @@
+{% set current_lang = request.environ.CKAN_LANG %}
+
 {% block header_wrapper %}
 {% block header_account %}
-  <div class="account-masthead ec-account-masthead">
-    <div class="container">
-      {% block header_account_container_content %}
-        {% if c.userobj %}
-          <div class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}">
+   {% block header_account_container_content %}
+   {% if c.userobj %}
+   <div class="account-masthead ec-account-masthead">
+      <div class="container">
+               <div class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}">
+                  <ul class="unstyled">
+                     {% block header_account_logged %}
+                        {% if c.userobj.sysadmin %}
+                           <li>
+                              <a href="{{ h.url_for(controller='admin', action='index') }}" title="{{ _('Sysadmin settings') }}">
+                                 <i class="icon-legal"></i>
+                              </a>
+                           </li>
+                        {% endif %}
+                        <li>
+                           <a href="{{ h.url_for(controller='user', action='read', id=c.userobj.name) }}" class="image" title="{{ _('View profile') }}">
+                              {{ h.gravatar((c.userobj.email_hash if c and c.userobj else ''), size=22) }}
+                              <span class="username">{{ c.userobj.display_name }}</span>
+                           </a>
+                        </li>
+                        {% set new_activities = h.new_activities() %}
+                        <li class="notifications {% if new_activities > 0 %}notifications-important{% endif %}">
+                               {% set notifications_tooltip = ngettext('Dashboard (%(num)d new item)', 'Dashboard (%(num)d new items)', new_activities) %}
+                           <a href="{{ h.url_for(controller='user', action='dashboard') }}" title="{{ notifications_tooltip }}">
+                              <i class="icon-dashboard"></i>
+                              <span>{{ new_activities }}</span>
+                           </a>
+                        </li>
+                        {% block header_account_settings_link %}
+                           <li>
+                              <a href="{{ h.url_for(controller='user', action='edit', id=c.userobj.name) }}" title="{{ _('Edit settings') }}">
+                                 <i class="icon-cog"></i>
+                              </a>
+                           </li>
+                        {% endblock %}
+                        {% block header_account_log_out_link %}
+                           <li>
+                              <a href="{{ h.url_for('/user/_logout') }}" title="{{ _('Log out') }}">
+                                 <i class="icon-signout"></i>
+                              </a>
+                           </li>
+                        {% endblock %}
+                     {% endblock %}
+                  </ul>
+               </div>
+      </div> <!-- /container -->
+   </div>   
+      {% else %}
+        <!-- nothing to do here: login link is in the toolbar -->
+     {% endif %}
+
+ {% endblock %}
+
+   <!-- Upper line, language, etc -->
+   <div class="account-masthead ec-account-masthead">
+      <div class="container upper-row">
+<!--         <nav class="account-masthead"> -->
             <ul class="unstyled">
-              {% block header_account_logged %}
-              {% if c.userobj.sysadmin %}
-                <li>
-                  <a href="{{ h.url_for(controller='admin', action='index') }}" title="{{ _('Sysadmin settings') }}">
-                    <i class="icon-legal"></i>
-                  </a>
-                </li>
-              {% endif %}
-              <li>
-                <a href="{{ h.url_for(controller='user', action='read', id=c.userobj.name) }}" class="image" title="{{ _('View profile') }}">
-                  {{ h.gravatar((c.userobj.email_hash if c and c.userobj else ''), size=22) }}
-                  <span class="username">{{ c.userobj.display_name }}</span>
-                </a>
-              </li>
-              {% set new_activities = h.new_activities() %}
-              <li class="notifications {% if new_activities > 0 %}notifications-important{% endif %}">
-                {% set notifications_tooltip = ngettext('Dashboard (%(num)d new item)', 'Dashboard (%(num)d new items)', new_activities) %}
-                <a href="{{ h.url_for(controller='user', action='dashboard') }}" title="{{ notifications_tooltip }}">
-                  <i class="icon-dashboard"></i>
-                  <span>{{ new_activities }}</span>
-                </a>
-              </li>
-              {% block header_account_settings_link %}
-                <li>
-                  <a href="{{ h.url_for(controller='user', action='edit', id=c.userobj.name) }}" title="{{ _('Edit settings') }}">
-                    <i class="icon-cog"></i>
-                  </a>
-                </li>
-              {% endblock %}
-              {% block header_account_log_out_link %}
-                <li>
-                  <a href="{{ h.url_for('/user/_logout') }}" title="{{ _('Log out') }}">
-                    <i class="icon-signout"></i>
-                  </a>
-                </li>
-              {% endblock %}
-              {% endblock %}
+               <li><a>Legal notice</a>&nbsp;|&nbsp;</li> 
+               <li><a>Contact</a>&nbsp;|&nbsp;</li> 
+               <li><a>Search</a>&nbsp;</li>
+               <li> {% snippet "snippets/language_selector.html" %}</li>
             </ul>
-          </div>
-        {% else %}
-          <nav class="account not-authed">
-            <ul class="unstyled">
-              {% block header_account_notlogged %}
-              <li>{% link_for _('Log in'), controller='user', action='login' %}</li>
-              {% if h.check_access('user_create') %}
-                <li>{% link_for _('Register'), controller='user', action='register', class_='sub' %}</li>
-              {% endif %}
-			  <li>{% snippet "snippets/language_selector.html" %}</li>
-              {% endblock %}
-            </ul>
-          </nav>
-        {% endif %}
-      {% endblock %}
-    </div>
-  </div>
+<!--         </nav>    -->
+      </div> <!-- /container -->
+   </div>
+
 {% endblock %}
+
 <div class="masthead ec-masthead">
   {% block header_debug %}
     {% if g.debug and not g.debug_supress_header %}
       <div class="debug">Controller : {{ c.controller }}<br/>Action : {{ c.action }}</div>
     {% endif %}
   {% endblock %}
-  <div class="container">
+
+   <div class="container">
     {# The .header-image class hides the main text and uses image replacement for the title #}
     <hgroup class="{{ g.header_class }}">
 
+{#
+<div class="header header-title">
       {% block header_logo %}
-        {% if g.site_logo %}
+        {% if g.site_logoqqq %}
           <!--a class="logo" href="{{ h.url('home') }}"><img src="{{ h.url_for_static(g.site_logo) }}" alt="{{ g.site_title }} Logo" title="{{ g.site_title }} Logo" /></a-->
         {% else %}
-          <h1>
+    <div class="logo">
+        <a id="logo" rel="Home" title="{{_(g.site_title)}}" href="{{h.url_for('/')}}">
+           <img src="{{h.url_for_static('/images/rdsi-banner.jpg') }}" alt="{{_(g.site_title)}}" title="{{_(g.site_title)}}" />  
+       </a>
+    </div>
+</div>
+
+<!--      <h1>
             <a href="{{ h.url('home') }}">{{ g.site_title }}</a>
-          </h1>
-          {% if g.site_description %}<h2>{{ g.site_description }}</h2>{% endif %}
+          </h1> -->
+          {% if g.site_descriptionXXX %}<h2>{{ g.site_description }}</h2>{% endif %}
         {% endif %}
       {% endblock %}
-
+#}
     </hgroup>
+
 
     <div class="content">
 
-      {% block header_site_navigation %}
-        <nav class="section navigation">
-          <ul class="nav nav-pills">
-            {% block header_site_navigation_tabs %}
-              {{ h.build_nav_main(
-                ('search', _('Datasets')),
-                ('organizations_index', _('Organizations')),
-                ('group_index', _('Groups')),
-                ('about', _('About'))
-              ) }}
-            {% endblock %}
-          </ul>
-        </nav>
-      {% endblock %}
-
       {% block header_site_search %}
-        <form class="section site-search simple-input" action="{% url_for controller='package', action='search' %}" method="get">
+<!--        <form class="section site-search simple-input" action="{% url_for controller='package', action='search' %}" method="get">
           <div class="field">
             <label for="field-sitewide-search">{{ _('Search Datasets') }}</label>
             <input id="field-sitewide-search" type="text" name="q" placeholder="{{ _('Search datasets...') }}" />
             <button class="btn-search" type="submit"><i class="icon-search"></i></button>
           </div>
-        </form>
+        </form> -->
       {% endblock %}
 
     </div>
   </div>
-</div>
+
+</div> 
 {% endblock %}

@@ -1,34 +1,91 @@
+
 body {
-  background: #FFFFFF;
+    color: #555555;
+    font-family: Verdana,Arial,Helvetica,"DejaVu Sans",sans-serif;
+    font-size: 62.5%;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  background-color: #BBBBBB;
+/*  background: #FFFFFF;*/
+}
+
+body, p, input, button, h3, h4, h2 a, .page_heading small {
+    font-family: "Lucida Sans Unicode","Lucida Grande",Tahoma,Verdana,Arial,sans-serif;
+    line-height: 1.5;
+/*    font-size: 13px; */
+}
+
+.pagecontainer {
+/*    font-size: 120%;
+    margin: 0 auto; */
+    width: 988px;
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: #ffffff;
+}
+
+.container {
+         font-size: 120%;
+         margin: 0 auto; 
+    width: 988px;
+ /*   margin-left: auto;
+    margin-right: auto;*/
 }
 
 /* - Header - */
 
-.ec-account-masthead{
+.account-masthead{
     margin-left: auto;
     margin-right: auto;
-	width:940px;
+/*	width:940px;*/
+    height: 20px;
 	background: url("../images/languagebar.png") no-repeat scroll right top #FFFFFF;
 }
 
-.ec-masthead{
+
+
+.masthead{
 	margin-left: auto;
     margin-right: auto;
-	width:940px;	
+/*	width:940px;*/
+/*   background: url("../../../base/images/bg.png") repeat scroll 0 0 #ffffff; */
+	
+   background:  repeat scroll 0 0 #ffffff; 
 }
+
+.masthead a {}
 
 .account-masthead .account ul li {
 	border-left: 0px solid #00232E;
+}
+
+.account-masthead .select2-choice{
+
+   height: 20px;
 }
 
 .ec-language{
 	width: 120px;
 }
 
+.select2-container .select2-choice {
+ line-height: 21px;
+}
+
+.upper-row form {
+    margin-bottom: 0;
+}
+
 /* - Layout 1 - */
 
 .hero-ec{
-	background: #BBBBBB;
+    background: #BBBBBB;
+    margin-bottom: 40px;
 }
 
 .ec-col1{
@@ -36,12 +93,12 @@ body {
 }
 
 .ec-col2{
-	width: 250px;
+	width: 270px;
 }
 
 .ec-layout1-container {
-  height: 550px;
-  margin-top: 20px;
+/*  height: 550px; */
+/*  margin-top: 20px; */
   background: #FFFFFF;
 }
 
@@ -60,4 +117,557 @@ body {
 .ec-site-footer{
 	background: #FFFFFF;
 }
+
+hgroup.header-text-logo {
+    background: white url('/images/rdsi-banner.jpg') no-repeat scroll;
+    background-size: 1800px Auto;
+    width: 988px;    
+    height: 150px;
+}
+
+.logo {
+    overflow: hidden;
+}
+
+.logo a {
+    bottom: 7px;
+/*    height: 60px; */
+    padding-left: 0px; 
+/*    position: absolute; */
+}
+
+.logo img {
+    max-width: 180%;
+}
+
+.upper-row {
+   float: right;
+}
+
+.upper-row li {
+    display: inline;
+    color: #000000;
+float:left;
+margin-right:0;
+}
+
+.upper-row ul {
+float:right;
+}
+
+/*.upper-row li a*/
+
+.navigation ul {
+    height: 29px;
+    margin: 0;
+    padding: 10px 0 0;
+}
+
+nav.navigation {
+    background: url("../images/menu.png") no-repeat scroll right center #1C3048;
+}
+
+
+
+nav ul {
+    font-size: 14px;
+    font-weight: normal;
+    list-style: none outside none;
+}
+
+
+/*ovr main.css*/
+.navigation .nav-pills > .active > a,
+.navigation .nav-pills > .active > a:hover, 
+.navigation .nav-pills > .active > a:focus {
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #505D8C;
+    font-weight: bold;
+}
+
+/*ovr main.css*/
+.navigation .nav-pills > li > a {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: inline;
+}
+
+nav.navigation ul li a:hover, 
+nav.navigation ul li a:focus, 
+nav.navigation ul li li.active, 
+nav.navigation ul li a:active {
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #505D8C;
+    font-weight: bold;
+}
+
+nav.navigation ul li a {
+    background: linear-gradient(to bottom, #6C7DAC 0%, #353D66 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 29px;
+/*    margin-right: -3px; */
+    padding: 6px 13px;
+
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+
+.menulogin {
+    bottom: 25px;
+    position: relative;
+    right: 120px;
+    float: right;
+}
+
+.menulogin a {
+    color: #E4EBF0;
+    font-style: italic;
+    font-size: 12px;
+}
+
+.menulogin span {
+    background: url("../images/padlock.png") no-repeat scroll 0 50% rgba(0, 0, 0, 0);
+    padding-left: 15px;
+}
+
+.breadcrumb-custom {
+    background-color: #E9EFF3;
+    border-top: 1px none #CCCCCC;
+    color: #646464;
+    padding-bottom: 2px;
+}
+
+.breadcrumb-custom a {
+    padding-left: 0;
+    white-space: nowrap;
+    color: #545454;
+
+}
+
+.breadcrumb-custom li {
+   display: inline;
+   color: #545454;
+
+}
+.breadcrumb-custom ol {
+   list-style: disc outside none;
+   margin: 0 0 0 10px;
+color: #A1C6D0;
+}
+
+.breadcrumb-custom a, .breadcrumb-custom a:visited, .breadcrumb-custom .last {
+    color: #646464;
+    font-size: 90%;
+    line-height: 1.6;
+    padding-left: 0px;
+}
+
+.breadcrumb-custom li:after {
+    content: " >";
+    color: #A1C6D0;
+}
+.breadcrumb-custom li:last-child:after {
+    content: "";
+}
+
+.homepage [role="main"] {
+    min-height: 0;
+    padding: 0px 0;
+}
+
+
+.homepage .module-search .search-giant {
+ /*   margin-bottom: 10px;*/
+    margin-top: 20px;
+}
+
+.region-tabdesc {
+    /* this is the original ec bg image*/
+    /* background: url("../images/descborder.png") no-repeat scroll center bottom #FFFFFF; */
+    background: url("../images/basemap_bg00crop.jpg") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    margin: 0 auto 10px;
+    padding: 10px 0;
+    position: relative;
+    min-height: 200px;
+}
+
+.form-submit:not(#odp-search), .page-search input[type="submit"] {
+    border-radius: 0 8px 8px 0;
+}
+
+/*
+input#txtSearchData, .region-tabdesc input[type="text"] {
+    box-shadow: none;
+    width: 596px;
+}*/
+
+.homepage .region-tabdesc .module-search {
+    background: none repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 5px;
+}
+
+.homepage .region-tabdesc input[type="text"] {
+    border: 2px solid #CACACA;
+    border-radius: 11px;
+    color: #333333;
+    display: block;
+    font-size: 14px;
+    margin: 0 auto 10px;
+    padding: 11px 10px;
+/*    width: 823px; */
+
+    box-shadow: none;
+    width: 596px;
+}
+
+
+/*ovr main.css*/
+.search-form .search-input.search-giant button {
+    height: 33px;
+    margin-top: 0px;
+    right: 27px;
+    top: 5px;
+}
+
+.region-tabdesc button, .region-tabdesc button:hover {
+    -moz-appearance: button;
+    -moz-binding: none;
+    -moz-box-sizing: border-box;
+    -moz-user-select: none;
+    background: url("../images/search_button.png") no-repeat scroll right top rgba(0, 0, 0, 0) !important;
+    border: 0 outset buttonface !important;
+    cursor: default;
+    font: -moz-button;
+    height: 33px;
+    margin: 0 !important;
+    padding: 0;
+    position: absolute;
+    right: 86px;
+    text-align: center;
+    text-indent: 0;
+    top: 32px;
+    white-space: inherit;
+    width: 33px;
+
+     border-radius: 0 8px 8px 0;
+}
+
+.region-tabdesc p {
+    color: #555555;
+    font-size: 14px;
+}
+
+.dataset-stats {
+    margin-left: 30px;
+    margin-top:  20px;
+}
+
+
+/*ovr main.css*/
+[role="main"], .main {
+    background:none repeat scroll 0 0  #FFFFFF;
+}
+
+/*ovr main.css*/
+.homepage .row {
+   margin-left: 0px;
+}
+
+.homepage .row {
+   margin-bottom: 20px;
+}
+
+
+/*ovr main.css*/
+.box {
+    box-shadow: 0 0 0 0;
+    border: 0px solid #CCCCCC;
+}
+
+.box h2 {
+    background-color: #F5F5F5;
+    border: 1px solid #BBBBBB;
+    padding: 10px 10px 8px 20px;
+}
+
+h1, h2, sidebar-section h3 {
+    font-family: Georgia,serif;
+    line-height: 1.5;
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+h2 {
+/*   border-bottom: 1px solid #AAAAAA; */
+    color: #505D8C;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    padding: 10px 0;
+}
+
+h2 {
+    clear: both;
+    overflow: hidden;
+}
+
+/*ovr main.css*/
+.homepage .box .inner {
+    padding: 1px 20px 10px;
+}
+
+.box .inner {
+    padding: 0 20px 10px;
+    border: 1px solid #BBBBBB;
+    border-top: 0px;
+}
+
+.box-title h2 {
+    border-bottom: 1px solid #AAAAAA;
+}
+
+.homepage .box li {
+   line-height: 18px;
+}
+
+/*
+.homepage .hero-ec {
+ background: url("../images/basemap_bg00crop.jpg") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}*/
+
+.resource {
+    background: url("../images/icons.png") no-repeat scroll -17px 0 rgba(0, 0, 0, 0);
+    display: block;
+    float: left;
+    height: 19px;
+    margin: 0 0 0 -23px;
+    width: 19px;
+}
+
+h2 a:hover .resource,
+a.item_link:hover .resource {
+    background: url("../images/icons.png") no-repeat scroll -17px -17px rgba(0, 0, 0, 0);
+}
+.publisher {
+    background: url("../images/icons.png") no-repeat scroll -34px 0 rgba(0, 0, 0, 0);
+    display: block;
+    float: left;
+    height: 19px;
+    margin: 0 0 0 -22px;
+    width: 19px;
+}
+
+h2 a:hover .publisher,
+a.item_link:hover .publisher {
+    background: url("../images/icons.png") no-repeat scroll -34px -17px rgba(0, 0, 0, 0);
+}
+
+
+a.item_link strong {
+    color: #666666;
+    font-size: 13px;
+}
+
+a.item_link, a.item_link:visited {
+    color: #999999;
+    display: block;
+    margin: 20px 0 10px;
+    padding-left: 30px;
+    position: relative;
+    text-decoration: none;
+}
+
+a.item_link:hover, 
+a.item_link:hover p, 
+a.item_link:hover .dataset-descr, 
+a.item_link:hover strong {
+    color: #089CCE !important;
+}
+
+.sidebar-section, .suggest-box, .facet-box {
+/*    background: url("../images/box.png") no-repeat scroll 100% 100% #EEEEEE; */
+    background-color: rgba(200, 200, 200, 0.8);
+
+    border-bottom: 1px solid #BBBBBB;
+    border-right: 1px solid #BBBBBB;
+    margin: 20px 0;
+    padding: 15px;
+}
+
+.sidebar-section h3, 
+.suggest-box h2, 
+.facet-box h2 {
+    border-bottom-width: 0;
+    color: #4B5583;
+    margin: 0 0 15px;
+    padding: 0;
+}
+
+.suggest-box a {
+    font-style: italic;
+}
+
+/*ovr main.css*/
+.homepage.layout-1 .row1 .col2 {
+    position: relative;
+}
+
+.intro-welcome {
+    background-color: #EEEEEE;
+    border: 1px solid #C7C7C7;
+    margin-bottom: 15px;
+    padding: 10px 10px 5px;
+  font-size: 13px;
+}
+
+.intro-welcome h2 {
+    margin-bottom: 15px;
+}
+
+/*ovr main.css*/
+/*removes the vertical border along the secondary content */
+.wrapper:before, wrapper:after {
+    content: none;
+    display: block;
+}
+
+.wrapper {
+    border:0;
+    border-radius: 0px;
+    box-shadow: none;
+}
+
+.wrapper_about .row {
+    margin-bottom: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+
+}
+
+.wrapper_about p {
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
+/*ovr main.css*/
+.wrapper_about [role="main"] {
+    padding-top:  0;
+}
+
+.wrapper_about .hero {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.wrapper_about .region-tabdesc {
+    min-height: 478px;
+    margin-bottom: 0;
+
+    font-weight: bold;
+}
+
+footer.site-footer {
+    background-color: #E9EFF3;
+    border-top: 1px none #CCCCCC;
+    clear: both;
+    color: #646464;
+    font-size: 90%;
+    line-height: 1.6;
+    padding-bottom: 3px;
+    padding-left: 5px;
+                                                                                                                                                                       
+    min-height: 15px;                                                                                        
+
+}
+
+footer.site-footer a {
+    color: #646464;
+}
+
+/* ovr mapstore css */
+[role="main"] #content .primary {
+  float: left;
+/*  width: 665px;*/
+}
+
+[role="main"] #content .secondary {
+/*  float: left; */
+/*  margin-left: 0; */
+  width: 300px;
+}
+
+/* remove arrow nav from selected items */
+.nav-item.active > a:before, .nav-aside li.active a:before {
+    background-image: none;
+}
+
+.dataset-list .dataset-item:hover h3,
+.dataset-list .dataset-item:hover .dataset-descr  {
+    color: #089CCE;
+}
+
+.dataset-list .dataset-item h3 {
+    color: #666666;
+    font-size: 13px;
+}
+
+.dataset-list .dataset-item .dataset-descr {
+    color: #999999 ;
+    font-weight: normal;
+/*    margin-left: 25px; */
+}
+
+li.dataset-item {
+    margin-left: 23px; 
+
+    /* ovr main.css */
+    border-bottom: none;
+}
+
+.dataset-list .dataset-item a:hover, 
+.dataset-list .dataset-item a:visited, 
+.dataset-list .dataset-item a:link, 
+.dataset-list .dataset-item a:active {
+    text-decoration: none;
+}
+
+.dataset-list .dataset-item .label {
+    background-color: transparent;
+    color: #999999;
+    text-shadow: none;
+    text-transform: uppercase;
+
+   border: 1px solid #BBBBBB;
+   border-radius: 3px;
+   font-size: 10px;
+   font-style: normal;
+   line-height: 1;
+}
+
+.dataset-list .dataset-item .nolabel {
+    display:none;
+}
+
+ul.dataset-resources {
+    float: left;
+}
+
+
+ul#basketlist {
+    margin: 0;
+}
+
+#shopping-basket-container {
+    width: 100%;
+    padding-left: 0;
+}
+
 

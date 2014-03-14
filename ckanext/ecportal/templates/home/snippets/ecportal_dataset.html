@@ -1,0 +1,20 @@
+{#
+Displays a single of dataset.
+
+package        - A package to display.
+banner         - If true displays a popular banner (default: false).
+truncate_title - The length to truncate the title to (default: 80).
+#}
+
+{% set truncate_title = truncate_title or 80 %}
+{% set title = package.title or package.name %}
+
+<li Xclass="{{ item_class or "dataset-item" }}">
+   <a class="item_link" href="{{h.url_for(controller='package', action='read', id=package.name)}}">
+      <i class="resource"></i>
+      <strong>{{title}}</strong>
+      <br>
+      <span class="additional">{% block package_desc %}---{% endblock %}</span>
+   </a>
+</li>
+

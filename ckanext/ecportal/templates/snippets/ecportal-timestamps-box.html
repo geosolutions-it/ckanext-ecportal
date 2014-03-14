@@ -1,0 +1,36 @@
+{#
+   pkg        - A package to display.
+#}
+
+
+{% set dates = h.get_pkg_dict_extra(pkg, 'dataset-reference-date') %} 
+
+{% if dates %}
+   {% set formatted_dates = h.get_reference_dates_ec(dates) %}
+   <div class="dataset-box">
+      <h3>{{_('Reference dates')}}</h3>
+
+      {% for type in formatted_dates %}
+         <div>Data {{_(type)}}: {{formatted_dates[type]}} </div>
+      {% endfor%}
+
+   {% set metadata_date = h.get_pkg_dict_extra(pkg, 'metadata-date' ) %}
+   {% if metadata_date %}
+         <div>Metadata date: {{metadata_date}} </div>
+   {% endif %}
+
+
+      {#% if date.type = 'publication' %}
+         {% publication = date.value %}
+      {% endif %}
+
+      {% if date.type = 'creation' %}
+         {% creation = date.value %}
+      {% endif %}
+
+      { TODO check for other types #}
+   <div>
+
+{% endif %}
+
+

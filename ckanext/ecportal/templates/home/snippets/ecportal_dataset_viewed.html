@@ -1,0 +1,6 @@
+{% extends "home/snippets/ecportal_dataset.html" %}
+
+{% set num = package.tracking_summary.total %}
+
+{% block package_desc %}({{ ungettext('{num} view', '{num} views', num).format(num=num) }}){% endblock %}
+

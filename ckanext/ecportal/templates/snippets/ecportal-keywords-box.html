@@ -1,0 +1,18 @@
+{#
+   pkg        - A package to display.
+#}
+
+{% set tags = pkg.tags %}
+
+{% if tags %}
+
+   <div class="dataset-box">
+      <h3>{{_('Keywords')}}</h3>
+      {% for tag in tags %}
+         <div>{{h.tag_link(tag)}}</a></div>
+      {% endfor %}
+   </div>
+
+{% endif %}
+
+
