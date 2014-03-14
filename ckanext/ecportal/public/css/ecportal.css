@@ -675,3 +675,7 @@ ul#basketlist {
 /*	filter: progid:DXImageTransform.Microsoft.Gradient(enabled= 'true', startColorStr="#6C7DAC", endColorStr="#353D66");*/
 }
 
+.dataset-map-expanded #dataset-map {
+  margin-left: 20px;
+}
+
