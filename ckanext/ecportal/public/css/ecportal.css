@@ -202,6 +202,9 @@ nav.navigation ul li a:active {
 }
 
 nav.navigation ul li a {
+    /* apply only for IE > 8*/
+    background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9Imc2MjUiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiM2QzdEQUMiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiMzNTNENjYiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2c2MjUpIiAvPgo8L3N2Zz4=);
+    /*background-color: rgb(68, 76, 117);*/
     background: linear-gradient(to bottom, #6C7DAC 0%, #353D66 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
@@ -210,11 +213,11 @@ nav.navigation ul li a {
     line-height: 29px;
 /*    margin-right: -3px; */
     padding: 6px 13px;
-
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
+    /* apply only for IE > 8*/
+    padding-bottom: 4px \9;
 }
-
 
 .menulogin {
     bottom: 25px;
@@ -501,7 +504,6 @@ a.item_link:hover strong {
     margin: 20px 0;
     padding: 15px;
 }
-
 .sidebar-section h3, 
 .suggest-box h2, 
 .facet-box h2 {
@@ -669,5 +671,7 @@ ul#basketlist {
     width: 100%;
     padding-left: 0;
 }
-
+.breadcrumb-custom {
+/*	filter: progid:DXImageTransform.Microsoft.Gradient(enabled= 'true', startColorStr="#6C7DAC", endColorStr="#353D66");*/
+}
 
