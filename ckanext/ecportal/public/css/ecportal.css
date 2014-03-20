@@ -671,11 +671,10 @@ ul#basketlist {
     width: 100%;
     padding-left: 0;
 }
-.breadcrumb-custom {
-/*	filter: progid:DXImageTransform.Microsoft.Gradient(enabled= 'true', startColorStr="#6C7DAC", endColorStr="#353D66");*/
-}
-
 .dataset-map-expanded #dataset-map {
   margin-left: 20px;
+}
+.wrapper-ec{
+    background: none;
 }
 
